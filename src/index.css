@@ -27,6 +27,7 @@ form {
 }
 
 .add-image {
+  margin: 15px;
   padding: 0 1rem 0 1rem;
   background-color: rgba(0, 0, 0, 0.5);
   font-size: 2rem;
