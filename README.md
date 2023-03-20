@@ -7,7 +7,7 @@ AKK Web Gallery is a platform where photography enthusiasts can share their favo
 
 **Feel free to share your favorite pictures with like-minded photography enthusiasts.**
 
-![AKK Web Gallery Screenshot](./public/screenshot.png)
+![AKK Web Gallery Screenshot](./public/screenshot.jpeg)
 
 ## Features
 
