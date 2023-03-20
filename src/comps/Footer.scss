@@ -1,0 +1,14 @@
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 30px 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  > a {
+    color: #fff;
+    font-weight: 700;
+  }
+}
