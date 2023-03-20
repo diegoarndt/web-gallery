@@ -29,7 +29,7 @@ const UploadForm = () => {
           onChange={changeHandler}
           accept='image/*'
         />
-        <span className='add-image'>+</span>
+        <span className='add-image' title='Add a new picture'>+</span>
       </label>
       <div className='output'>
         {error && <div className='error'>{error}</div>}
