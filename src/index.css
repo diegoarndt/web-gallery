@@ -11,6 +11,11 @@ body {
   text-align: center;
 }
 
+p {
+  font-size: 1.2em;
+  padding: 15px 0;
+}
+
 form {
   display: flex;
   align-items: center;
@@ -40,13 +45,13 @@ form {
 }
 
 .img-grid {
-  margin: 20px auto;
+  margin: 35px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
-  max-height: 600px;
+  max-height: 718px;
   overflow-y: auto;
 }
 
@@ -87,6 +92,7 @@ form {
   height: 100%;
   object-fit: cover;
   top: 0;
+  border: 2px solid white;
 }
 
 .img-wrap:hover {
@@ -114,8 +120,38 @@ form {
   object-fit: contain;
 }
 
+@media (max-width: 768px) {
+  #root {
+    margin: 20px;
+  }
+
+  .title {
+    font-size: 1.7em !important;
+  }
+
+  .nav-bar {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-brand {
+    font-size: 1.2em;
+  }
+
+  .img-grid {
+    grid-gap: 20px;
+    padding: 20px;
+    max-height: 225px;
+  }
+
+  p, footer {
+    font-size: 0.9em;
+    padding: 15px 0;
+  }
+}
+
 @media (min-width: 768px) {
   #root {
+    margin: 20px;
     min-width: 500px;
   }
 }
