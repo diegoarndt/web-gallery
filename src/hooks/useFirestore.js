@@ -5,6 +5,7 @@ const useFirestore = (collection) => {
   const [docs, setDocs] = useState([]);
 
   useEffect(() => {
+    // Listen for changes in the collection (new images added, images deleted)
     const unsubscribe = projectFirestore
       .collection(collection)
       .orderBy('createdAt', 'desc')

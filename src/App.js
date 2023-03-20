@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ImageGrid from './comps/ImageGrid';
 import Modal from './comps/Modal';
@@ -13,11 +13,13 @@ const Gallery = ({ handleLogout }) => {
   const [selectedImg, setSelectedImg] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  // when user clicks on an image, open modal and display image
   const handleImgClick = (img) => {
     setSelectedImg(img);
     setShowModal(true);
   };
 
+  // when user clicks on the modal, close it
   const closeModal = () => {
     setSelectedImg(null);
     setShowModal(false);
@@ -43,6 +45,7 @@ function App() {
     loading,
   } = useAuth();
 
+  // If loading, show loading message
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -71,6 +74,7 @@ function App() {
   );
 }
 
+// Wrap App in AuthProvider
 const WrappedApp = () => {
   return (
     <AuthProvider>

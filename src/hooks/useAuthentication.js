@@ -14,29 +14,38 @@ const useAuthentication = () => {
 
     // Unsubscribe from the listener when the component unmounts
     return unsubscribe;
-  }, []);
+  }, [setIsAuthenticated]);
+
+  const authOptions = {
+    signIn: 1,
+    signUp: 2,
+    sendPasswordResetEmail: 3,
+  };
 
   const handleAuthentication = async (email, password, option) => {
     let user = null;
-    
+
     try {
-      if (option === 1) {
-        // Sign in
-        const userCredential = await projectAuth.signInWithEmailAndPassword(email, password);
+      if (option === authOptions.signIn) {
+        const userCredential = await projectAuth.signInWithEmailAndPassword(
+          email,
+          password
+        );
         user = userCredential.user;
-      } else if (option === 2) {
-        // Sign up
-        const userCredential = await projectAuth.createUserWithEmailAndPassword(email, password);
+      } else if (option === authOptions.signUp) {
+        const userCredential = await projectAuth.createUserWithEmailAndPassword(
+          email,
+          password
+        );
         user = userCredential.user;
-      } else {
-        // Send password reset email
+      } else if (option === authOptions.sendPasswordResetEmail) {
         await projectAuth.sendPasswordResetEmail(email);
         setUserMessage('Password reset email sent!');
       }
     } catch (error) {
       errorHandler(error, setUserMessage);
     }
-  
+
     return user;
   };
 

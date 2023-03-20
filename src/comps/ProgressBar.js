@@ -4,6 +4,7 @@ import useStorage from "../hooks/useStorage";
 const ProgressBar = ({ file, setFile }) => {
   const { url, progress } = useStorage(file);
 
+  // Remove progress bar when upload is complete
   useEffect(() => {
     if (url) {
       setFile(null);

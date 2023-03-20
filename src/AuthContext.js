@@ -11,6 +11,7 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // Check if user is authenticated on page load
   useEffect(() => {
     const unsubscribe = projectAuth.onAuthStateChanged((user) => {
       setIsAuthenticated(user !== null);
@@ -20,6 +21,7 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
+  // Sign out user, set isAuthenticated to false
   const handleLogout = async () => {
     try {
       await projectAuth.signOut();

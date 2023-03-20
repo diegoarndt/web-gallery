@@ -6,8 +6,9 @@ const Modal = ({ selectedImg, closeModal }) => {
   };
 
   return (
+    // onClick={closeImg} is for closing the modal when clicking outside the image
     <div className="backdrop" onClick={closeImg}>
-      <img src={selectedImg} alt="Full View" />
+      <img src={selectedImg} alt="Modal view" />
     </div>
   );
 };

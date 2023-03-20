@@ -1,37 +1,38 @@
-import React, { useState } from "react";
-import ProgressBar from "./ProgressBar";
+import React, { useState } from 'react';
+import ProgressBar from './ProgressBar';
 
 const UploadForm = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
 
-  const types = ["image/png", "image/jpeg", "image/gif"];
+  const types = ['image/png', 'image/jpeg', 'image/gif'];
 
   const changeHandler = (e) => {
     let selected = e.target.files[0];
 
     if (selected && types.includes(selected.type)) {
       setFile(selected);
-      setError("");
+      setError('');
     } else {
       setFile(null);
-      setError("Please select an image that is (png, jpeg or gif)");
+      setError('Please select an image that is (png, jpeg or gif)');
     }
   };
 
   return (
+    // When user clicks on the + button, open file explorer to select image
     <form>
       <label>
-        {/* <input type="file" onChange={changeHandler} /> */}
         <input
-          type="file"
-          style={{ display: "none" }}
+          type='file'
+          style={{ display: 'none' }}
           onChange={changeHandler}
+          accept='image/*'
         />
-        <span className="add-image">+</span>
+        <span className='add-image'>+</span>
       </label>
-      <div className="output">
-        {error && <div className="error">{error}</div>}
+      <div className='output'>
+        {error && <div className='error'>{error}</div>}
         {file && <div>{file.name}</div>}
         {file && <ProgressBar file={file} setFile={setFile} />}
       </div>

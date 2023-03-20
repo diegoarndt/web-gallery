@@ -9,15 +9,12 @@ const Login = ({ setIsAuthenticated }) => {
   const [option, setOption] = React.useState(1);
   const [signUpError, setSignUpError] = useState(null);
   const navigate = useNavigate();
-  const {
-    isAuthenticated,
-    message,
-    handleAuthentication,
-  } = useAuthentication();
+  const { isAuthenticated, message, handleAuthentication } =
+    useAuthentication();
 
   useEffect(() => {
     setIsAuthenticated(isAuthenticated);
-  }, [isAuthenticated]);
+  }, [isAuthenticated, setIsAuthenticated]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,10 +36,12 @@ const Login = ({ setIsAuthenticated }) => {
     }
   };
 
+  // Handle changes in the email field
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
+  // Handle changes in the password field
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };

@@ -14,9 +14,11 @@ const useStorage = (file) => {
     const storageRef = projectStorage.ref(file.name);
     const collectionRef = projectFirestore.collection("images");
 
+    // Upload picture to firebase storage
     storageRef.put(file).on(
       "state_changed",
       (snap) => {
+        // Calculate progress of upload
         let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
         setProgress(percentage);
       },
