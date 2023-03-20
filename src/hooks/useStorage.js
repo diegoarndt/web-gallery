@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import {
   projectStorage,
   projectFirestore,
   timestamp,
-} from "../firebase/config";
+} from '../firebase/config';
 
 const useStorage = (file) => {
   const [progress, setProgress] = useState(0);
@@ -12,11 +12,11 @@ const useStorage = (file) => {
 
   useEffect(() => {
     const storageRef = projectStorage.ref(file.name);
-    const collectionRef = projectFirestore.collection("images");
+    const collectionRef = projectFirestore.collection('images');
 
     // Upload picture to firebase storage
     storageRef.put(file).on(
-      "state_changed",
+      'state_changed',
       (snap) => {
         // Calculate progress of upload
         let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;

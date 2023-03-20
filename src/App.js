@@ -38,12 +38,8 @@ const Gallery = ({ handleLogout }) => {
 };
 
 function App() {
-  const {
-    isAuthenticated,
-    setIsAuthenticated,
-    handleLogout,
-    loading,
-  } = useAuth();
+  const { isAuthenticated, setIsAuthenticated, handleLogout, loading } =
+    useAuth();
 
   // If loading, show loading message
   if (loading) {
