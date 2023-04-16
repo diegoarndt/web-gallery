@@ -134,10 +134,12 @@ function App() {
           />
         </Routes>
       </div>
-      <div>
-        Randomly selected background color:&nbsp;
-        {ConvertHslToRgb(localStorage.getItem('bgColor'))}
-      </div>
+      {isAuthenticated ? null : (
+        <div>
+          Randomly selected background color:&nbsp;
+          {ConvertHslToRgb(localStorage.getItem('bgColor'))}
+        </div>
+      )}
     </>
   );
 }
