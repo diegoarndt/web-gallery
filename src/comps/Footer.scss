@@ -1,14 +1,25 @@
 footer {
   position: fixed;
-  width: 100%;
-  bottom: 0;
   left: 0;
+  bottom: 0;
+  height: 5vh;
+  width: 100%;
   padding: 30px 0;
-  text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   > a {
     color: #fff;
     font-weight: 700;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    height: 10vh;
+    padding: 0;
   }
 }

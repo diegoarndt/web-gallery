@@ -22,6 +22,12 @@ form {
   justify-content: center;
 }
 
+.app {
+  width: 100%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
 .title {
   font-size: 2.5em !important;
 }
@@ -123,28 +129,32 @@ form {
 
 @media (max-width: 768px) {
   #root {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    width: auto;
     margin: 20px;
+  }
+
+  .app {
+    width: 100%;
+    /* padding-bottom: 10vh; */
   }
 
   .title {
     font-size: 1.7em !important;
   }
 
-  .nav-bar {
-    padding: 1rem 1.5rem;
-  }
-
-  .nav-brand {
-    font-size: 1.2em;
-  }
-
   .img-grid {
     grid-gap: 20px;
     padding: 20px;
-    max-height: 225px;
+    max-height: 40.5vh;
   }
 
-  p, footer {
+  p,
+  footer {
     font-size: 0.9em;
     padding: 15px 0;
   }
@@ -152,6 +162,12 @@ form {
 
 @media (min-width: 768px) {
   #root {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+    width: auto;
     margin: 20px;
     min-width: 500px;
   }
