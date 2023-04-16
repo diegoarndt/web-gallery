@@ -12,9 +12,8 @@ const NavBar = ({ handleLogout }) => {
   };
 
   return (
-    // nav bar with a brand name and a sign out button
     <nav className='nav-bar'>
-      <span className='nav-brand'>AKK Web Gallery</span>
+      <span className='nav-brand'>Web Gallery</span>
       <div className='nav-links'>
         <button className='btn-sign-out' onClick={handleLogoutClick}>
           Sign out

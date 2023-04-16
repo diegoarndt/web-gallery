@@ -20,7 +20,6 @@ const UploadForm = () => {
   };
 
   return (
-    // When user clicks on the + button, open file explorer to select image
     <form>
       <label>
         <input
@@ -29,7 +28,9 @@ const UploadForm = () => {
           onChange={changeHandler}
           accept='image/*'
         />
-        <span className='add-image' title='Add a new picture'>+</span>
+        <span className='add-image' title='Add a new picture'>
+          +
+        </span>
       </label>
       <div className='output'>
         {error && <div className='error'>{error}</div>}
