@@ -1,6 +1,7 @@
 {
   "projects": {
-    "production": "akk-web-gallery"
+    "production": "akk-web-gallery",
+    "default": "akk-web-gallery"
   },
   "targets": {},
   "etags": {}
