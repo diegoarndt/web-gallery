@@ -14,6 +14,11 @@ const Login = ({ setIsAuthenticated }) => {
 
   useEffect(() => {
     setIsAuthenticated(isAuthenticated);
+
+    const randomColor = `hsl(${Math.floor(Math.random() * 360)}, 50%, 70%)`;
+    localStorage.setItem('bgColor', randomColor);
+
+    document.body.style.backgroundColor = randomColor;
   }, [isAuthenticated, setIsAuthenticated]);
 
   const handleSubmit = async (e) => {
@@ -48,7 +53,7 @@ const Login = ({ setIsAuthenticated }) => {
 
   return (
     <div className='container'>
-      <h1 className='project-name'>AKK Web Gallery</h1>
+      <h1 className='project-name'>Web Gallery</h1>
       <header>
         <div
           className={
@@ -63,6 +68,7 @@ const Login = ({ setIsAuthenticated }) => {
       </header>
       <ul className='options'>
         <li
+          key='1'
           className={option === 1 ? 'active' : ''}
           onClick={() => {
             setOption(1);
@@ -72,6 +78,7 @@ const Login = ({ setIsAuthenticated }) => {
           Sign in
         </li>
         <li
+          key='2'
           className={option === 2 ? 'active' : ''}
           onClick={() => {
             setOption(2);
@@ -81,6 +88,7 @@ const Login = ({ setIsAuthenticated }) => {
           Sign up
         </li>
         <li
+          key='3'
           className={option === 3 ? 'active' : ''}
           onClick={() => {
             setOption(3);

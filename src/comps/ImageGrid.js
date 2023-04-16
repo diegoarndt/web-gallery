@@ -5,7 +5,6 @@ const ImageGrid = ({ setSelectedImg }) => {
   const { docs } = useFirestore('images');
 
   return (
-    // Display images in a grid layout
     <div className='img-grid'>
       {docs &&
         docs.map((doc) => (
